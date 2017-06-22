@@ -1,0 +1,53 @@
+name: xlate
+version: 0.1.0.0
+license: ISC
+github: proger/xlate
+category: AI
+extra-source-files:
+  - README.md
+
+ghc-options:
+  - -Wno-missing-signatures
+  - -Wno-unused-matches
+  - -Wno-unused-imports
+  - -Wno-type-defaults
+  - -Wincomplete-patterns
+
+default-extensions:
+  - OverloadedStrings
+  - PackageImports
+  - ScopedTypeVariables
+  - TypeApplications
+  - TypeFamilies
+  - KindSignatures
+  - DataKinds
+  - DeriveFunctor
+  - DeriveGeneric
+  - GeneralizedNewtypeDeriving
+  - PartialTypeSignatures
+
+dependencies:
+  - base
+  - containers
+  - bytestring
+  - text
+  - unix
+  - process
+  - directory
+  - pretty-show
+  - vector
+  - criterion
+  - xlsx
+  - attoparsec
+  - lens
+  - hspec
+
+library:
+  source-dirs: src
+
+executables:
+  xlmerge:
+    main: xlmerge.hs
+    source-dirs: app
+    dependencies:
+      - xlate
